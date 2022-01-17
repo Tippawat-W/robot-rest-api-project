@@ -42,6 +42,7 @@ CHECKUPDATE_DATA
     ${json_object}=     set variable     ${response.json()}
     ${id}=      get value from json     ${json_object}     data.id
     log to console      ${id}
+    log to console      ${response.content}
 
 PATCH_DATA
     create session      PatchData      ${base_url}
