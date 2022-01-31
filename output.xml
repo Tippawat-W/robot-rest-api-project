@@ -1,64 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.1 on win32)" generated="20220117 18:50:42.245" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.2 (Python 3.9.1 on win32)" generated="20220131 23:14:32.755" rpa="false" schemaversion="2">
 <suite id="s1" name="Restapi" source="C:\Users\007\PycharmProjects\robotframe-rest-api\Automation\restapi.robot">
-<test id="s1-t1" name="CHECK_DATA">
+<test id="s1-t1" name="Flow create update delete">
+<kw name="CHECK_DATA" library="resource">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>GetData</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220117 18:50:42.458" level="INFO">Creating Session using : alias=GetData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220117 18:50:42.457" endtime="20220117 18:50:42.458"/>
+<msg timestamp="20220131 23:14:33.859" level="INFO">Creating Session using : alias=GetData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220131 23:14:33.859" endtime="20220131 23:14:33.859"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>GetData</arg>
 <arg>/api/studentsDetails/</arg>
+<arg>expected_status=200</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220117 18:50:42.757" level="INFO">GET Request : url=http://thetestingworldapi.com/api/studentsDetails/ 
+<msg timestamp="20220131 23:14:34.128" level="INFO">GET Request : url=http://thetestingworldapi.com/api/studentsDetails/ 
  path_url=/api/studentsDetails/ 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220117 18:50:42.757" level="INFO">GET Response : url=http://thetestingworldapi.com/api/studentsDetails/ 
+<msg timestamp="20220131 23:14:34.128" level="INFO">GET Response : url=http://thetestingworldapi.com/api/studentsDetails/ 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 17 Jan 2022 11:50:42 GMT', 'Content-Length': '11510'} 
- body=[{"id":544813,"first_name":"harish","middle_name":"balaji","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":544812,"first_name":"Kailash","middle_name":"Jadhav","last_name":"Salavath","date_of_birth":"02 Nov 1998"},{"id":544810,"first_name":"Kailash","middle_name":"Jadhav","last_name":"Salavath","date_of_birth":"02 Nov 1998"},{"id":544808,"first_name":"Kailash","middle_name":"Jadhav","last_name":"Salavath","date_of_birth":"02 Nov 1998"},{"id":544806,"first_name":"Kailash","middle_name":"Jadhav","last_name":"Salavath","date_of_birth":"02 Nov 1998"},{"id":544804,"first_name":"test4","middle_name":"middle4","last_name":"last4","date_of_birth":"2022-01-16 00:00:00"},{"id":544803,"first_name":"test3","middle_name":"middle3","last_name":"last3","date_of_birth":"2022-01-15 00:00:00"},{"id":544802,"first_name":"test2","middle_name":"middle2","last_name":"last2","date_of_birth":"2022-01-14 00:00:00"},{"id":544801,"first_name":"test1","middle_name":"middle1","last_name":"last1","date_of_birth":"2022-01-13 00:00:00"},{"id":544800,"first_name":"test4","middle_name":"middle4","last_name":"last4","date_of_birth":"2022-01-16 00:00:00"},{"id":544799,"first_name":"test3","middle_name":"middle3","last_name":"last3","date_of_birth":"2022-01-15 00:00:00"},{"id":544798,"first_name":"test2","middle_name":"middle2","last_name":"last2","date_of_birth":"2022-01-14 00:00:00"},{"id":544797,"first_name":"test1","middle_name":"middle1","last_name":"last1","date_of_birth":"2022-01-13 00:00:00"},{"id":544796,"first_name":"Testing","middle_name":"A","last_name":"World","date_of_birth":"12/12/1990"},{"id":544786,"first_name":"Nitin","middle_name":"GG","last_name":"Angadi","date_of_birth":"01/01/2021"},{"id":544785,"first_name":"Nitin","middle_name":"NN","last_name":"Angadi","date_of_birth":"01/01/2021"},{"id":544784,"first_name":"Test3","middle_name":"middle3","last_name":"last3","date_of_birth":"2022-07-14 00:00:00"},{"id":544783,"first_name":"Test2","middle_name":"middle2","last_name":"last2","date_of_birth":"2022-12-13 00:00:00"},{"id":544782,"first_name":"Test1","middle_name":"middle1","last_name":"last1","date_of_birth":"2022-03-12 00:00:00"},{"id":544781,"first_name":"Jaytesting","middle_name":"testing","last_name":"TestTesting","date_of_birth":"12/07/1990"},{"id":544751,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544750,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544749,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544748,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544747,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544746,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544745,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544744,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544743,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544742,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544741,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544740,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544739,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544738,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544737,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544736,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544735,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544734,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544733,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544732,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544731,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544730,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544729,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544728,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544727,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544726,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544725,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544724,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544723,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544722,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544721,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544720,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544719,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544718,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544717,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544716,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544715,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544714,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544713,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544712,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544711,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544710,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544709,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544708,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":544707,"first_name":"Scarlet","middle_name":"Salma","last_name":"Johanson","date_of_birth":"01/01/1989"},{"id":544706,"first_name":"Salma","middle_name":"Joanna","last_name":"Hayek","date_of_birth":"01/03/1977"},{"id":544705,"first_name":"Brad","middle_name":"Janusz","last_name":"Pitt","date_of_birth":"01/03/1977"},{"id":544704,"first_name":"Angelina","middle_name":"Jolie","last_name":"Camila","date_of_birth":"01/03/1977"},{"id":544703,"first_name":"Angelina","middle_name":"Jolie","last_name":"Camila","date_of_birth":"01/03/1977"},{"id":544702,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":544701,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":544700,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":544699,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":544698,"first_name":"Rakib","middle_name":"Islam","last_name":"Akbar","date_of_birth":"22/12/2010"},{"id":544697,"first_name":"Test3","middle_name":"middle3","last_name":"last3","date_of_birth":"2022-07-14 00:00:00"},{"id":544696,"first_name":"Test2","middle_name":"middle2","last_name":"last2","date_of_birth":"2022-12-13 00:00:00"},{"id":544695,"first_name":"Test1","middle_name":"middle1","last_name":"last1","date_of_birth":"2022-03-12 00:00:00"},{"id":544694,"first_name":"Test3","middle_name":"middle3","last_name":"last3","date_of_birth":"2022-07-14 00:00:00"},{"id":544693,"first_name":"Test2","middle_name":"middle2","last_name":"last2","date_of_birth":"2022-12-13 00:00:00"},{"id":544692,"first_name":"Test1","middle_name":"middle1","last_name":"last1","date_of_birth":"2022-03-12 00:00:00"},{"id":544691,"first_name":"Test3","middle_name":"middle3","last_name":"last3","date_of_birth":"2022-07-14 00:00:00"},{"id":544690,"first_name":"Test2","middle_name":"middle2","last_name":"last2","date_of_birth":"2022-12-13 00:00:00"},{"id":544689,"first_name":"Test1","middle_name":"middle1","last_name":"last1","date_of_birth":"2022-03-12 00:00:00"},{"id":544688,"first_name":"Test3","middle_name":"middle3","last_name":"last3","date_of_birth":"2022-07-14 00:00:00"},{"id":544687,"first_name":"Test2","middle_name":"middle2","last_name":"last2","date_of_birth":"2022-12-13 00:00:00"},{"id":544686,"first_name":"Test1","middle_name":"middle1","last_name":"last1","date_of_birth":"2022-03-12 00:00:00"},{"id":544685,"first_name":"Test3","middle_name":"middle3","last_name":"last3","date_of_birth":"2022-07-14 00:00:00"},{"id":544684,"first_name":"Test2","middle_na... (set the log level to DEBUG or TRACE to see the full content) 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 31 Jan 2022 16:14:35 GMT', 'Content-Length': '10930'} 
+ body=[{"id":548519,"first_name":"hey","middle_name":" 3","last_name":"s 4","date_of_birth":"12/12/125"},{"id":548518,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":548517,"first_name":"TestAL","middle_name":"TestBB","last_name":"TestCC","date_of_birth":"01/01/1990"},{"id":548516,"first_name":"TestAK","middle_name":"TestBB","last_name":"TestCKB","date_of_birth":"01/01/1990"},{"id":548515,"first_name":"TestAJ","middle_name":"TestBB","last_name":"TestCC","date_of_birth":"01/01/1990"},{"id":548514,"first_name":"TestAI","middle_name":"TestBB","last_name":"TestCK","date_of_birth":"01/01/1990"},{"id":548513,"first_name":"TestAH","middle_name":"TestBB","last_name":"TestCL","date_of_birth":"01/01/1990"},{"id":548512,"first_name":"TestAG","middle_name":"TestBB","last_name":"TestCC","date_of_birth":"01/01/1990"},{"id":548511,"first_name":"TestAF","middle_name":"TestBB","last_name":"TestCC","date_of_birth":"01/01/1990"},{"id":548510,"first_name":"TestAE","middle_name":"TestBB","last_name":"TestCC","date_of_birth":"01/01/1990"},{"id":548509,"first_name":"TestAD","middle_name":"TestBB","last_name":"TestCC","date_of_birth":"01/01/1990"},{"id":548508,"first_name":"TestAC","middle_name":"TestBB","last_name":"TestCC","date_of_birth":"01/01/1990"},{"id":548507,"first_name":"TestAB","middle_name":"TestBB","last_name":"TestCMB","date_of_birth":"01/01/1990"},{"id":548506,"first_name":"TestAA","middle_name":"TestBB","last_name":"TestCM","date_of_birth":"01/01/1990"},{"id":548505,"first_name":"TestAA","middle_name":"TestBB","last_name":"TestCM","date_of_birth":"01/01/1990"},{"id":548504,"first_name":"TestAA","middle_name":"TestBB","last_name":"TestCM","date_of_birth":"01/01/1990"},{"id":548502,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548500,"first_name":"Testing","middle_name":"Whatever","last_name":"World","date_of_birth":"12/31/2021"},{"id":548497,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548494,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548491,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548490,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548488,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548487,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548486,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548485,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548484,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548483,"first_name":"Yash","middle_name":"Sai","last_name":"Gorrepati","date_of_birth":"04/01/2000"},{"id":548482,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548481,"first_name":"Yash","middle_name":"middleName","last_name":"Gorrepati","date_of_birth":"04/01/2000"},{"id":548480,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548479,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548478,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548477,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548476,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548475,"first_name":"firstName","middle_name":"middleName","last_name":"Gorrepati","date_of_birth":"04/01/2000"},{"id":548474,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548473,"first_name":"firstName","middle_name":null,"last_name":"Gorrepati","date_of_birth":"04/01/2000"},{"id":548472,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548471,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548470,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548469,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548468,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548467,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548466,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548465,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":548464,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548463,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548462,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548461,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548460,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548459,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548458,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548457,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548456,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548455,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548454,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548453,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548452,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548451,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548450,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"},{"id":548449,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548448,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548447,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548446,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548445,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548444,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548443,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548442,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548441,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548440,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548439,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548438,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548437,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548436,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548435,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548434,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548433,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548432,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548431,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548430,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548429,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548428,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548427,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548426,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548425,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548424,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548423,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548422,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548421,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548420,"first_name":"Sample1","middle_name":"Sample2","last_name":"Sample3","date_of_birth":"dob"},{"id":548419,"f... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg timestamp="20220117 18:50:42.757" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220117 18:50:42.458" endtime="20220117 18:50:42.757"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:42.758" endtime="20220117 18:50:42.759"/>
+<msg timestamp="20220131 23:14:34.129" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220131 23:14:33.860" endtime="20220131 23:14:34.129"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${actual_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220117 18:50:42.760" level="INFO">${actual_code} = 200</msg>
-<status status="PASS" starttime="20220117 18:50:42.759" endtime="20220117 18:50:42.760"/>
+<msg timestamp="20220131 23:14:34.130" level="INFO">${actual_code} = 200</msg>
+<status status="PASS" starttime="20220131 23:14:34.129" endtime="20220131 23:14:34.130"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${actual_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220117 18:50:42.760" endtime="20220117 18:50:42.761"/>
+<status status="PASS" starttime="20220131 23:14:34.130" endtime="20220131 23:14:34.130"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${actual_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220131 23:14:34.130" endtime="20220131 23:14:34.130"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:42.761" endtime="20220117 18:50:42.763"/>
+<status status="PASS" starttime="20220131 23:14:34.130" endtime="20220131 23:14:34.132"/>
 </kw>
-<status status="PASS" starttime="20220117 18:50:42.457" endtime="20220117 18:50:42.763"/>
-</test>
-<test id="s1-t2" name="ADD_DATA">
+<status status="PASS" starttime="20220131 23:14:33.859" endtime="20220131 23:14:34.132"/>
+</kw>
+<kw name="ADD_DATA" library="resource">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>AddData</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220117 18:50:42.765" level="INFO">Creating Session using : alias=AddData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220117 18:50:42.765" endtime="20220117 18:50:42.765"/>
+<msg timestamp="20220131 23:14:34.133" level="INFO">Creating Session using : alias=AddData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220131 23:14:34.133" endtime="20220131 23:14:34.133"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
@@ -67,149 +69,180 @@
 <arg>last_name=TCL_004</arg>
 <arg>date_of_birth=12/12/1990</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220117 18:50:42.766" level="INFO">${body} = {'first_name': 'Test_004', 'middle_name': 'TC_004', 'last_name': 'TCL_004', 'date_of_birth': '12/12/1990'}</msg>
-<status status="PASS" starttime="20220117 18:50:42.765" endtime="20220117 18:50:42.766"/>
+<msg timestamp="20220131 23:14:34.134" level="INFO">${body} = {'first_name': 'Test_004', 'middle_name': 'TC_004', 'last_name': 'TCL_004', 'date_of_birth': '12/12/1990'}</msg>
+<status status="PASS" starttime="20220131 23:14:34.134" endtime="20220131 23:14:34.134"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>AddData</arg>
 <arg>/api/studentsDetails/</arg>
 <arg>data=${body}</arg>
+<arg>expected_status=201</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220117 18:50:42.974" level="INFO">POST Request : url=http://thetestingworldapi.com/api/studentsDetails/ 
+<msg timestamp="20220131 23:14:34.301" level="INFO">POST Request : url=http://thetestingworldapi.com/api/studentsDetails/ 
  path_url=/api/studentsDetails/ 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '85', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=first_name=Test_004&amp;middle_name=TC_004&amp;last_name=TCL_004&amp;date_of_birth=12%2F12%2F1990 
  </msg>
-<msg timestamp="20220117 18:50:42.974" level="INFO">POST Response : url=http://thetestingworldapi.com/api/studentsDetails/ 
+<msg timestamp="20220131 23:14:34.301" level="INFO">POST Response : url=http://thetestingworldapi.com/api/studentsDetails/ 
  status=201, reason=Created 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Location': 'http://thetestingworldapi.com/api/studentsDetails/544815', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 17 Jan 2022 11:50:42 GMT', 'Content-Length': '111'} 
- body={"id":544815,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"} 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Location': 'http://thetestingworldapi.com/api/studentsDetails/548520', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 31 Jan 2022 16:14:35 GMT', 'Content-Length': '111'} 
+ body={"id":548520,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"} 
  </msg>
-<msg timestamp="20220117 18:50:42.974" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220117 18:50:42.766" endtime="20220117 18:50:42.974"/>
+<msg timestamp="20220131 23:14:34.302" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220131 23:14:34.134" endtime="20220131 23:14:34.302"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${actual_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220117 18:50:42.975" level="INFO">${actual_code} = 201</msg>
-<status status="PASS" starttime="20220117 18:50:42.974" endtime="20220117 18:50:42.975"/>
+<msg timestamp="20220131 23:14:34.303" level="INFO">${actual_code} = 201</msg>
+<status status="PASS" starttime="20220131 23:14:34.302" endtime="20220131 23:14:34.303"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${body["first_name"]}</arg>
+<arg>${response.json()}[first_name]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220131 23:14:34.303" endtime="20220131 23:14:34.311"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${body["middle_name"]}</arg>
+<arg>${response.json()}[middle_name]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220131 23:14:34.311" endtime="20220131 23:14:34.313"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${body["last_name"]}</arg>
+<arg>${response.json()}[last_name]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220131 23:14:34.313" endtime="20220131 23:14:34.315"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${body["date_of_birth"]}</arg>
+<arg>${response.json()}[date_of_birth]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220131 23:14:34.315" endtime="20220131 23:14:34.317"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${actual_code}</arg>
 <arg>201</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220117 18:50:42.976" endtime="20220117 18:50:42.976"/>
+<status status="PASS" starttime="20220131 23:14:34.317" endtime="20220131 23:14:34.318"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${actual_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:42.977" endtime="20220117 18:50:42.977"/>
+<status status="PASS" starttime="20220131 23:14:34.318" endtime="20220131 23:14:34.319"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${json_object}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220117 18:50:42.978" level="INFO">${json_object} = {'id': 544815, 'first_name': 'Test_004', 'middle_name': 'TC_004', 'last_name': 'TCL_004', 'date_of_birth': '12/12/1990'}</msg>
-<status status="PASS" starttime="20220117 18:50:42.977" endtime="20220117 18:50:42.978"/>
+<msg timestamp="20220131 23:14:34.320" level="INFO">${json_object} = {'id': 548520, 'first_name': 'Test_004', 'middle_name': 'TC_004', 'last_name': 'TCL_004', 'date_of_birth': '12/12/1990'}</msg>
+<status status="PASS" starttime="20220131 23:14:34.319" endtime="20220131 23:14:34.320"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${id}</var>
 <arg>${json_object}</arg>
 <arg>id</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220117 18:50:43.002" level="INFO">${id} = [544815]</msg>
-<status status="PASS" starttime="20220117 18:50:42.978" endtime="20220117 18:50:43.002"/>
+<msg timestamp="20220131 23:14:34.377" level="INFO">${id} = [548520]</msg>
+<status status="PASS" starttime="20220131 23:14:34.320" endtime="20220131 23:14:34.378"/>
 </kw>
 <kw name="Convert JSON To String" library="JSONLibrary">
 <var>${id_student}</var>
 <arg>${id[0]}</arg>
 <doc>Convert JSON object to string</doc>
-<msg timestamp="20220117 18:50:43.003" level="INFO">${id_student} = 544815</msg>
-<status status="PASS" starttime="20220117 18:50:43.002" endtime="20220117 18:50:43.003"/>
+<msg timestamp="20220131 23:14:34.378" level="INFO">${id_student} = 548520</msg>
+<status status="PASS" starttime="20220131 23:14:34.378" endtime="20220131 23:14:34.378"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${id_student}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220117 18:50:43.005" level="INFO">${id_student} = 544815</msg>
-<status status="PASS" starttime="20220117 18:50:43.004" endtime="20220117 18:50:43.005"/>
+<msg timestamp="20220131 23:14:34.379" level="INFO">${id_student} = 548520</msg>
+<status status="PASS" starttime="20220131 23:14:34.378" endtime="20220131 23:14:34.379"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${id_student}</arg>
+<arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:43.005" endtime="20220117 18:50:43.006"/>
+<status status="PASS" starttime="20220131 23:14:34.379" endtime="20220131 23:14:34.380"/>
 </kw>
-<status status="PASS" starttime="20220117 18:50:42.764" endtime="20220117 18:50:43.007"/>
-</test>
-<test id="s1-t3" name="CHECKUPDATE_DATA">
+<status status="PASS" starttime="20220131 23:14:34.133" endtime="20220131 23:14:34.380"/>
+</kw>
+<kw name="CHECKUPDATE_DATA" library="resource">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>GetData</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220117 18:50:43.009" level="INFO">Creating Session using : alias=GetData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220117 18:50:43.009" endtime="20220117 18:50:43.009"/>
+<msg timestamp="20220131 23:14:34.381" level="INFO">Creating Session using : alias=GetData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220131 23:14:34.381" endtime="20220131 23:14:34.381"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>GetData</arg>
 <arg>http://thetestingworldapi.com/api/studentsDetails/${id_student}</arg>
+<arg>expected_status=200</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220117 18:50:43.205" level="INFO">GET Request : url=http://thetestingworldapi.com/api/studentsDetails/544815 
- path_url=/api/studentsDetails/544815 
+<msg timestamp="20220131 23:14:34.524" level="INFO">GET Request : url=http://thetestingworldapi.com/api/studentsDetails/548520 
+ path_url=/api/studentsDetails/548520 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220117 18:50:43.205" level="INFO">GET Response : url=http://thetestingworldapi.com/api/studentsDetails/544815 
+<msg timestamp="20220131 23:14:34.524" level="INFO">GET Response : url=http://thetestingworldapi.com/api/studentsDetails/548520 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 17 Jan 2022 11:50:42 GMT', 'Content-Length': '136'} 
- body={"status":"true","data":{"id":544815,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"}} 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 31 Jan 2022 16:14:35 GMT', 'Content-Length': '136'} 
+ body={"status":"true","data":{"id":548520,"first_name":"Test_004","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"}} 
  </msg>
-<msg timestamp="20220117 18:50:43.206" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220117 18:50:43.009" endtime="20220117 18:50:43.206"/>
+<msg timestamp="20220131 23:14:34.524" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220131 23:14:34.381" endtime="20220131 23:14:34.524"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${actual_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220117 18:50:43.207" level="INFO">${actual_code} = 200</msg>
-<status status="PASS" starttime="20220117 18:50:43.206" endtime="20220117 18:50:43.207"/>
+<msg timestamp="20220131 23:14:34.525" level="INFO">${actual_code} = 200</msg>
+<status status="PASS" starttime="20220131 23:14:34.525" endtime="20220131 23:14:34.525"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${actual_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220117 18:50:43.207" endtime="20220117 18:50:43.207"/>
+<status status="PASS" starttime="20220131 23:14:34.525" endtime="20220131 23:14:34.526"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${actual_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220131 23:14:34.526" endtime="20220131 23:14:34.526"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${json_object}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220117 18:50:43.208" level="INFO">${json_object} = {'status': 'true', 'data': {'id': 544815, 'first_name': 'Test_004', 'middle_name': 'TC_004', 'last_name': 'TCL_004', 'date_of_birth': '12/12/1990'}}</msg>
-<status status="PASS" starttime="20220117 18:50:43.208" endtime="20220117 18:50:43.208"/>
+<msg timestamp="20220131 23:14:34.527" level="INFO">${json_object} = {'status': 'true', 'data': {'id': 548520, 'first_name': 'Test_004', 'middle_name': 'TC_004', 'last_name': 'TCL_004', 'date_of_birth': '12/12/1990'}}</msg>
+<status status="PASS" starttime="20220131 23:14:34.526" endtime="20220131 23:14:34.527"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${id}</var>
 <arg>${json_object}</arg>
 <arg>data.id</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220117 18:50:43.234" level="INFO">${id} = [544815]</msg>
-<status status="PASS" starttime="20220117 18:50:43.208" endtime="20220117 18:50:43.234"/>
+<msg timestamp="20220131 23:14:34.556" level="INFO">${id} = [548520]</msg>
+<status status="PASS" starttime="20220131 23:14:34.527" endtime="20220131 23:14:34.556"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${id}</arg>
+<arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:43.234" endtime="20220117 18:50:43.235"/>
+<status status="PASS" starttime="20220131 23:14:34.556" endtime="20220131 23:14:34.557"/>
 </kw>
-<status status="PASS" starttime="20220117 18:50:43.008" endtime="20220117 18:50:43.237"/>
-</test>
-<test id="s1-t4" name="PATCH_DATA">
+<status status="PASS" starttime="20220131 23:14:34.380" endtime="20220131 23:14:34.557"/>
+</kw>
+<kw name="PATCH_DATA" library="resource">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>PatchData</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220117 18:50:43.242" level="INFO">Creating Session using : alias=PatchData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220117 18:50:43.242" endtime="20220117 18:50:43.242"/>
+<msg timestamp="20220131 23:14:34.558" level="INFO">Creating Session using : alias=PatchData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220131 23:14:34.558" endtime="20220131 23:14:34.558"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
@@ -219,166 +252,182 @@
 <arg>last_name=TCL_004</arg>
 <arg>date_of_birth=12/12/1990</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220117 18:50:43.243" level="INFO">${body} = {'id': '544815', 'first_name': 'Test_101', 'middle_name': 'TC_004', 'last_name': 'TCL_004', 'date_of_birth': '12/12/1990'}</msg>
-<status status="PASS" starttime="20220117 18:50:43.242" endtime="20220117 18:50:43.243"/>
+<msg timestamp="20220131 23:14:34.559" level="INFO">${body} = {'id': '548520', 'first_name': 'Test_101', 'middle_name': 'TC_004', 'last_name': 'TCL_004', 'date_of_birth': '12/12/1990'}</msg>
+<status status="PASS" starttime="20220131 23:14:34.558" endtime="20220131 23:14:34.559"/>
 </kw>
 <kw name="PUT On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>PatchData</arg>
 <arg>/api/studentsDetails/${id_student}</arg>
 <arg>data=${body}</arg>
+<arg>expected_status=200</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20220117 18:50:43.447" level="INFO">PUT Request : url=http://thetestingworldapi.com/api/studentsDetails/544815 
- path_url=/api/studentsDetails/544815 
+<msg timestamp="20220131 23:14:34.706" level="INFO">PUT Request : url=http://thetestingworldapi.com/api/studentsDetails/548520 
+ path_url=/api/studentsDetails/548520 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '95', 'Content-Type': 'application/x-www-form-urlencoded'} 
- body=id=544815&amp;first_name=Test_101&amp;middle_name=TC_004&amp;last_name=TCL_004&amp;date_of_birth=12%2F12%2F1990 
+ body=id=548520&amp;first_name=Test_101&amp;middle_name=TC_004&amp;last_name=TCL_004&amp;date_of_birth=12%2F12%2F1990 
  </msg>
-<msg timestamp="20220117 18:50:43.447" level="INFO">PUT Response : url=http://thetestingworldapi.com/api/studentsDetails/544815 
+<msg timestamp="20220131 23:14:34.706" level="INFO">PUT Response : url=http://thetestingworldapi.com/api/studentsDetails/548520 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 17 Jan 2022 11:50:42 GMT', 'Content-Length': '46'} 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 31 Jan 2022 16:14:35 GMT', 'Content-Length': '46'} 
  body={"status":"true","msg":"update  data success"} 
  </msg>
-<msg timestamp="20220117 18:50:43.448" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220117 18:50:43.243" endtime="20220117 18:50:43.448"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:43.449" endtime="20220117 18:50:43.452"/>
+<msg timestamp="20220131 23:14:34.707" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220131 23:14:34.559" endtime="20220131 23:14:34.707"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${actual_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220117 18:50:43.456" level="INFO">${actual_code} = 200</msg>
-<status status="PASS" starttime="20220117 18:50:43.453" endtime="20220117 18:50:43.456"/>
+<msg timestamp="20220131 23:14:34.707" level="INFO">${actual_code} = 200</msg>
+<status status="PASS" starttime="20220131 23:14:34.707" endtime="20220131 23:14:34.707"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${actual_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220117 18:50:43.457" endtime="20220117 18:50:43.458"/>
+<status status="PASS" starttime="20220131 23:14:34.707" endtime="20220131 23:14:34.708"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${actual_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:43.459" endtime="20220117 18:50:43.460"/>
+<status status="PASS" starttime="20220131 23:14:34.708" endtime="20220131 23:14:34.708"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220131 23:14:34.708" endtime="20220131 23:14:34.709"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>PatchData</arg>
 <arg>/api/studentsDetails/${id_student}</arg>
+<arg>expected_status=200</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220117 18:50:43.581" level="INFO">GET Request : url=http://thetestingworldapi.com/api/studentsDetails/544815 
- path_url=/api/studentsDetails/544815 
+<msg timestamp="20220131 23:14:34.791" level="INFO">GET Request : url=http://thetestingworldapi.com/api/studentsDetails/548520 
+ path_url=/api/studentsDetails/548520 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220117 18:50:43.581" level="INFO">GET Response : url=http://thetestingworldapi.com/api/studentsDetails/544815 
+<msg timestamp="20220131 23:14:34.792" level="INFO">GET Response : url=http://thetestingworldapi.com/api/studentsDetails/548520 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 17 Jan 2022 11:50:42 GMT', 'Content-Length': '136'} 
- body={"status":"true","data":{"id":544815,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"}} 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 31 Jan 2022 16:14:35 GMT', 'Content-Length': '136'} 
+ body={"status":"true","data":{"id":548520,"first_name":"Test_101","middle_name":"TC_004","last_name":"TCL_004","date_of_birth":"12/12/1990"}} 
  </msg>
-<msg timestamp="20220117 18:50:43.581" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220117 18:50:43.462" endtime="20220117 18:50:43.581"/>
+<msg timestamp="20220131 23:14:34.792" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220131 23:14:34.709" endtime="20220131 23:14:34.792"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${body["first_name"]}</arg>
+<arg>${response.json()}[data][first_name]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220131 23:14:34.792" endtime="20220131 23:14:34.793"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:43.583" endtime="20220117 18:50:43.585"/>
+<status status="PASS" starttime="20220131 23:14:34.793" endtime="20220131 23:14:34.794"/>
 </kw>
-<status status="PASS" starttime="20220117 18:50:43.241" endtime="20220117 18:50:43.587"/>
-</test>
-<test id="s1-t5" name="DELETE_DATA">
+<status status="PASS" starttime="20220131 23:14:34.558" endtime="20220131 23:14:34.794"/>
+</kw>
+<kw name="DELETE_DATA" library="resource">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>DeleteData</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220117 18:50:43.596" level="INFO">Creating Session using : alias=DeleteData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220117 18:50:43.596" endtime="20220117 18:50:43.597"/>
+<msg timestamp="20220131 23:14:34.795" level="INFO">Creating Session using : alias=DeleteData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220131 23:14:34.795" endtime="20220131 23:14:34.795"/>
 </kw>
 <kw name="DELETE On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>DeleteData</arg>
 <arg>/api/studentsDetails/${id_student}</arg>
+<arg>expected_status=200</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20220117 18:50:43.847" level="INFO">DELETE Request : url=http://thetestingworldapi.com/api/studentsDetails/544815 
- path_url=/api/studentsDetails/544815 
+<msg timestamp="20220131 23:14:34.942" level="INFO">DELETE Request : url=http://thetestingworldapi.com/api/studentsDetails/548520 
+ path_url=/api/studentsDetails/548520 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220117 18:50:43.847" level="INFO">DELETE Response : url=http://thetestingworldapi.com/api/studentsDetails/544815 
+<msg timestamp="20220131 23:14:34.942" level="INFO">DELETE Response : url=http://thetestingworldapi.com/api/studentsDetails/548520 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 17 Jan 2022 11:50:43 GMT', 'Content-Length': '46'} 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 31 Jan 2022 16:14:35 GMT', 'Content-Length': '46'} 
  body={"status":"true","msg":"Delete  data success"} 
  </msg>
-<msg timestamp="20220117 18:50:43.847" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220117 18:50:43.598" endtime="20220117 18:50:43.848"/>
+<msg timestamp="20220131 23:14:34.942" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220131 23:14:34.795" endtime="20220131 23:14:34.943"/>
 </kw>
 <kw name="Convert JSON To String" library="JSONLibrary">
 <var>${actual_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Convert JSON object to string</doc>
-<msg timestamp="20220117 18:50:43.851" level="INFO">${actual_code} = 200</msg>
-<status status="PASS" starttime="20220117 18:50:43.848" endtime="20220117 18:50:43.851"/>
+<msg timestamp="20220131 23:14:34.943" level="INFO">${actual_code} = 200</msg>
+<status status="PASS" starttime="20220131 23:14:34.943" endtime="20220131 23:14:34.943"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${actual_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220117 18:50:43.852" endtime="20220117 18:50:43.853"/>
+<status status="PASS" starttime="20220131 23:14:34.943" endtime="20220131 23:14:34.944"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${actual_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:43.854" endtime="20220117 18:50:43.855"/>
+<status status="PASS" starttime="20220131 23:14:34.944" endtime="20220131 23:14:34.944"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220131 23:14:34.945" endtime="20220131 23:14:34.946"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${jsonresponse}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220117 18:50:43.857" level="INFO">${jsonresponse} = {'status': 'true', 'msg': 'Delete  data success'}</msg>
-<status status="PASS" starttime="20220117 18:50:43.856" endtime="20220117 18:50:43.858"/>
+<msg timestamp="20220131 23:14:34.947" level="INFO">${jsonresponse} = {'status': 'true', 'msg': 'Delete  data success'}</msg>
+<status status="PASS" starttime="20220131 23:14:34.946" endtime="20220131 23:14:34.947"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${status_list}</var>
 <arg>${jsonresponse}</arg>
 <arg>status</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220117 18:50:43.898" level="INFO">${status_list} = ['true']</msg>
-<status status="PASS" starttime="20220117 18:50:43.859" endtime="20220117 18:50:43.898"/>
+<msg timestamp="20220131 23:14:34.970" level="INFO">${status_list} = ['true']</msg>
+<status status="PASS" starttime="20220131 23:14:34.947" endtime="20220131 23:14:34.970"/>
 </kw>
 <kw name="Get From List" library="Collections">
 <var>${status}</var>
 <arg>${status_list}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20220117 18:50:43.899" level="INFO">${status} = true</msg>
-<status status="PASS" starttime="20220117 18:50:43.899" endtime="20220117 18:50:43.899"/>
+<msg timestamp="20220131 23:14:34.970" level="INFO">${status} = true</msg>
+<status status="PASS" starttime="20220131 23:14:34.970" endtime="20220131 23:14:34.970"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status}</arg>
 <arg>true</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220117 18:50:43.900" endtime="20220117 18:50:43.900"/>
+<status status="PASS" starttime="20220131 23:14:34.970" endtime="20220131 23:14:34.971"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220117 18:50:43.901" endtime="20220117 18:50:43.901"/>
+<status status="PASS" starttime="20220131 23:14:34.971" endtime="20220131 23:14:34.971"/>
 </kw>
-<status status="PASS" starttime="20220117 18:50:43.593" endtime="20220117 18:50:43.901"/>
+<status status="PASS" starttime="20220131 23:14:34.794" endtime="20220131 23:14:34.971"/>
+</kw>
+<status status="PASS" starttime="20220131 23:14:33.858" endtime="20220131 23:14:34.972"/>
 </test>
-<status status="PASS" starttime="20220117 18:50:42.246" endtime="20220117 18:50:43.902"/>
+<status status="PASS" starttime="20220131 23:14:32.769" endtime="20220131 23:14:34.988"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="Restapi">Restapi</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Restapi">Restapi</stat>
 </suite>
 </statistics>
 <errors>
